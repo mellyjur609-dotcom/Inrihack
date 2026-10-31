@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inrihack Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;font-family:Poppins}body{margin:0;background:#0a0c18;color:#fff;padding:18px}
+.card{max-width:900px;margin:0 auto;background:#14172d;border:1px solid #2a2f5a;border-radius:16px;padding:20px}
+h2{color:#6c7bff}input,select{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #2a2f5a;background:#11142a;color:#fff}
+button{padding:11px 18px;border:none;border-radius:10px;background:#6c7bff;color:#fff;font-weight:600;cursor:pointer}
+.hidden{display:none}
+table{width:100%;border-collapse:collapse;margin-top:15px;font-size:13px}
+th,td{border-bottom:1px solid #2a2f5a;padding:10px;text-align:left}
+.badge{padding:4px 8px;border-radius:20px;font-size:11px}
+.b-one{background:#ff3c0022;color:#ff8c6b}.b-unlim{background:#00ff8822;color:#6bffae}
+</style>
+</head>
+<body>
+<div class="card" id="loginBox">
+<h2>INRI hack Admin Login</h2>
+<p style="color:#8a90b5">Enter password from Railway ENV: ADMIN_PASSWORD</p>
+<input type="password" id="adminPass" placeholder="Admin Password">
+<button onclick="login()">Login</button>
+<p id="loginMsg" style="color:#ff6b6b"></p>
+</div>
+
+<div class="card hidden" id="panel">
+<h2>Erihack - Key Generator</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+<input type="number" id="val" placeholder="Duration e.g 30" value="30">
+<select id="unit"><option value="minutes">Minutes</option><option value="hours">Hours</option><option value="days" selected>Days</option><option value="months">Months</option></select>
+<select id="dtype"><option value="one">One Device (HWID Lock)</option><option value="unlimited">Unlimited Devices</option></select>
+</div>
+<button onclick="create()" style="width:100%;margin-top:10px;background:linear-gradient(90deg,#6c7bff,#a66cff)">GENERATE KEY</button>
+<p id="cMsg" style="color:#6bffae;text-align:center"></p>
+<hr style="border-color:#2a2f5a;margin:20px 0">
+<button onclick="loadKeys()">🔄 Refresh Keys from backend (keys.json)</button>
+<div style="overflow:auto">
+<table><thead><tr><th>Key</th><th>Validity</th><th>Type</th><th>Status</th><th>Device</th><th>Action</th></tr></thead><tbody id="tbody"></tbody></table>
+</div>
+</div>
+<script src="js/admin.js"></script>
+</body>
+</html>

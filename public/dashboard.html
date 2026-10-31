@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INRI hack Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;font-family:Poppins}body{margin:0;background:#080a12;color:#fff;min-height:100vh;padding:18px}
+.header{max-width:600px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:Orbitron;color:#6c7bff;font-size:22px}.logo span{color:#fff}
+.timer-card{max-width:600px;margin:18px auto;background:linear-gradient(135deg,#1a1f3d,#14172d);border:1px solid #2a2f5a;border-radius:18px;padding:20px;text-align:center}
+#timer{font-family:Orbitron;font-size:36px;margin:10px 0;color:#fff}
+.sensi-card{max-width:600px;margin:0 auto;background:#14172d;border:1px solid #2a2f5a;border-radius:18px;padding:20px}
+.row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #1f2342;font-size:14px}
+.row b{color:#6c7bff}
+.btn{width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(90deg,#6c7bff,#a66cff);color:#fff;font-weight:600;margin-top:12px;cursor:pointer}
+.logout{background:#1f2342}
+</style>
+</head>
+<body>
+<div class="header"><div class="logo">ERI<span>HACK</span></div><div id="keyShow" style="font-size:11px;color:#8a90b5"></div></div>
+<div class="timer-card">
+<div style="color:#8a90b5;font-size:12px">LICENSE TIME REMAINING</div>
+<div id="timer">00d 00h 00m 00s</div>
+<div id="typeShow" style="font-size:12px;color:#6bffae"></div>
+</div>
+<div class="sensi-card">
+<h3 style="margin-top:0">🔥 Best Sensitivity For Your Device</h3>
+<p style="color:#8a90b5;font-size:12px">Generated based on your phone model for zero recoil & fast headshot</p>
+<button class="btn" onclick="gen()">GENERATE MY SENSITIVITY</button>
+<div id="sensiBox"></div>
+<button class="btn logout" onclick="logout()">Logout</button>
+</div>
+<script src="js/hwid.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
